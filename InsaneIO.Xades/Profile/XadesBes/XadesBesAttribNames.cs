@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InsaneIO.Xades.Profile.XadesBes
+{
+    public class XadesBesAttribNames
+    {
+        public const string Type = nameof(Type);
+    }
+}

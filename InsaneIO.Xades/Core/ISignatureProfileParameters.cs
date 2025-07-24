@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InsaneIO.Xades.Signer
+namespace InsaneIO.Xades.Core
 {
-    public interface IXadesSigner
+    public class ISignatureProfileParameters
     {
-        public string Sign();
-        public bool Verify();
     }
 }
