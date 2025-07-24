@@ -2,6 +2,7 @@
 using InsaneIO.Xades.Core;
 using InsaneIO.Xades.Profile;
 using InsaneIO.Xades.Profile.XadesBes;
+using InsaneIO.Xades.Profile.XmlDsig;
 using InsaneIO.Xades.Signer;
 using Microsoft.Extensions.Configuration;
 using System.Security.Cryptography;
@@ -60,7 +61,9 @@ namespace InsaneIO.Xades.Tests
                 CanonicalizationMethodTransform = CanonicalizationMethod.XmlDsigC14N,
             };
 
-            XadesBesSignatureProfileParameters parameters = new()
+            XmlDsigSignatureProfileParameters parameters1 = new();
+
+            XadesBesSignatureProfileParameters parameters2 = new()
             {
                 ContentDataObjectFormatProperties = new DataObjectFormat
                 {
@@ -83,7 +86,7 @@ namespace InsaneIO.Xades.Tests
 
 
             XadesSigner signer = new();
-            var result = signer.Sign(document, profile1, parameters, false);
+            var result = signer.Sign(document, profile1, parameters1, false);//Change profile and parameters number, 1 XmlDsig, 2 XadesBes
             File.WriteAllText(AppContext.BaseDirectory + "/doc.xml", result.OuterXml);
             output.WriteLine(result.OuterXml);
 
